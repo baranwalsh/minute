@@ -126,7 +126,7 @@ export default function middleware(
 
   if (req.nextUrl.pathname.startsWith("/api/trpc")) {
     const isValidApiRequest =
-      hasJsonContentType(req) && hasValidOrigin(req) && hasValidXhrHeader(req);
+      hasJsonContentType(req) && hasValidOrigin(req);
     if (!isValidApiRequest) {
       return new NextResponse("bad request", { status: 400 });
     }
