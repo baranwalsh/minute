@@ -107,10 +107,6 @@ const hasValidOrigin = (req: NextRequest) => {
   return origin === null || origin === serverEnv.ORIGIN;
 };
 
-const hasValidXhrHeader = (req: NextRequest) => {
-  return req.headers.get("X-Requested-With") === "XMLHttpRequest";
-};
-
 export default function middleware(
   req: NextRequestWithAuth,
   event: NextFetchEvent,
